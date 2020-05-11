@@ -1,0 +1,15 @@
+# json.extract! user, :id, :first_name, :last_name, :email, :username, :city, :state, :posts, :followees, :followers
+# json.profilepic asset_path(user.profilepic)
+# json.coverpic asset_path(user.coverpic)
+
+{
+  first_name: user.first_name,
+  last_name: user.last_name,
+  followees: user.followees,
+  followers: user.followers,
+  username: user.username,
+  email: user.email,
+  city: user.city,
+  state: user.state,
+  posts: user.posts
+}

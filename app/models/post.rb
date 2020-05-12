@@ -1,8 +1,8 @@
 class Post < ApplicationRecord
   
-  belongs_to :user, class_name: :User, foreign_key: :user_id
+  belongs_to :user, class_name: :User, foreign_key: :post_id
 
-  belongs_to :username, class_name: :User, foreign_key: :post_id
+  belongs_to :username
 
   has_many :likes, class_name: :Like, primary_key: :id, foreign_key: :post_id
 

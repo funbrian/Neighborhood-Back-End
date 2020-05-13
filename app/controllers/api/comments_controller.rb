@@ -1,7 +1,7 @@
 class Api::CommentsController < ApplicationController
   def index
     @comments = Comment.where("post_id = ?", params[:post_id])
-    render :index
+    render "index.json.jb"
   end
 
   def create
@@ -13,7 +13,7 @@ class Api::CommentsController < ApplicationController
     # @comment.user = current_user
     @comment.post = Post.find(params[:post_id])
     if @comment.save
-      render :show
+      render "show.json.jb"
     else
       render json: @comment.errors, status: 422
     end

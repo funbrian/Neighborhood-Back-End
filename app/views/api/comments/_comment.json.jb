@@ -1,0 +1,8 @@
+{
+  id: comment.id,
+  user: comment.user,
+  username: comment.user.username,
+  body: comment.body,
+  created_at: comment.created_at,
+  post: comment.post
+}

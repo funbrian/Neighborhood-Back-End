@@ -1,33 +1,12 @@
 # json.extract! post, :id, :title, :created_at, :genre, :status, :user_id, :username
 {
+  id: post.id,
   title: post.title,
   genre: post.genre,
-  username: post.username,
+  user: post.user,
+  username: post.user && post.user.username,
   status: post.status,
-  created_at: post.created_at
+  created_at: post.created_at,
+  likes: post.likes,
+  comments: post.comments
 }
-# if post.likes
-#   json.likes do
-#     post.likes.each do |like|
-#       json.set! like.id do
-#         json.likeId like.id
-#         json.userId like.user.id
-#         json.userFname like.user.first_name
-#         json.userLname like.user.last_name
-#       end
-#     end
-#   end
-# end
-# if post.comments
-#   json.comments do
-#     post.comments.each do |comment|
-#       json.set! comment.id do
-#         json.partial! 'api/comments/comment', comment: comment
-#         json.userid comment.user.id
-#         # json.userpic comment.user.profilepic.url
-#         json.userf comment.user.first_name
-#         json.userl comment.user.last_name
-#       end
-#     end
-#   end
-# end

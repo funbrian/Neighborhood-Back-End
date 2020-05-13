@@ -5,8 +5,11 @@
   genre: post.genre,
   user: post.user,
   username: post.user && post.user.username,
+  city: post.user && post.user.city,
+  state: post.user && post.user.state,
   status: post.status,
   created_at: post.created_at,
+  image_url: post.image_url,
   likes: post.likes,
   comments: post.comments
 }

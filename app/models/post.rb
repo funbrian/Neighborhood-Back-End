@@ -6,7 +6,7 @@ class Post < ApplicationRecord
 
   has_many :likes, class_name: :Like, primary_key: :id, foreign_key: :post_id
 
-  has_many :comments, class_name: :Comment, primary_key: :id, foreign_key: :post_id
+  has_many :comments
 
   # def post_username
   #   @posts.each do |post|

@@ -4,5 +4,6 @@
   username: comment.user.username,
   body: comment.body,
   created_at: comment.created_at,
-  post: comment.post
+  post: comment.post,
+  post_id: comment.post_id
 }

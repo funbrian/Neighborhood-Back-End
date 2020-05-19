@@ -5,7 +5,11 @@ class Api::LikesController < ApplicationController
   end
 
   def create
-    @like = current_user.likes.new(post_id: params[:post_id])
+    @like = Like.new(
+      post_id: params[:post_id],
+      user_id: current_user
+    )
+    @like.post = Post.find(params[:post_id])
     if @like.save
       render json: @like
     else

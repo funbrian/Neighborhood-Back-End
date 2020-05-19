@@ -2,9 +2,9 @@ class Post < ApplicationRecord
   
   belongs_to :user
 
-  # belongs_to :username
+  belongs_to :username
 
-  has_many :likes, class_name: :Like, primary_key: :id, foreign_key: :post_id
+  has_many :likes
 
   has_many :comments
 

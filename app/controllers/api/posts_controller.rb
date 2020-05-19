@@ -8,9 +8,8 @@ class Api::PostsController < ApplicationController
 
   def create
     @post = Post.new(post_params)
-    @post.user = current_user
-    @post.user_id = current_user.id
-    @post.username = current_user.username
+    # @post.user_id = current_user.id
+    # @post.username = current_user.username
     # if params.has_key?(:user_id)
     #   unless current_user.id == params[:user_id].to_i
     #     @post.tagged_user = params[:user_id]
@@ -54,6 +53,6 @@ class Api::PostsController < ApplicationController
 
   private
   def post_params
-    params.require(:post).permit(:title, :status, :genre, :username, :image_url, :file)
+    params.require(:post).permit(:title, :status, :genre, :image_url, :file)
   end
 end
